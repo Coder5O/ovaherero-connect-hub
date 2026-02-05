@@ -1,96 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Ovaherero Traditional Authority Design System
+   Colors inspired by the ohorokova dress, earth tones, and royal gold
+   All colors in HSL format
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
+    /* Primary: Deep Crimson Red - inspired by traditional ohorokova dress */
+    --primary: 0 65% 35%;
+    --primary-foreground: 40 30% 96%;
+    
+    /* Background: Warm cream/ivory */
+    --background: 35 35% 97%;
+    --foreground: 20 25% 15%;
+    
+    /* Card: Soft warm white */
+    --card: 35 40% 99%;
+    --card-foreground: 20 25% 15%;
+    
+    /* Popover */
+    --popover: 35 40% 99%;
+    --popover-foreground: 20 25% 15%;
+    
+    /* Secondary: Earth brown */
+    --secondary: 25 30% 88%;
+    --secondary-foreground: 20 25% 15%;
+    
+    /* Muted: Soft sand */
+    --muted: 30 25% 92%;
+    --muted-foreground: 20 15% 45%;
+    
+    /* Accent: Rich terracotta */
+    --accent: 15 55% 50%;
+    --accent-foreground: 40 30% 96%;
+    
+    /* Gold for highlights */
+    --gold: 42 85% 55%;
+    --gold-dark: 38 75% 40%;
+    --gold-foreground: 20 25% 15%;
+    
+    /* Earth tones */
+    --earth: 25 35% 30%;
+    --earth-light: 25 25% 50%;
+    --earth-foreground: 40 30% 96%;
+    
+    /* Destructive */
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 40 30% 96%;
+    
+    /* Border and inputs */
+    --border: 30 20% 85%;
+    --input: 30 20% 85%;
+    --ring: 0 65% 35%;
+    
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Sidebar */
+    --sidebar-background: 25 30% 15%;
+    --sidebar-foreground: 35 30% 92%;
+    --sidebar-primary: 0 65% 45%;
+    --sidebar-primary-foreground: 40 30% 96%;
+    --sidebar-accent: 25 35% 25%;
+    --sidebar-accent-foreground: 35 30% 92%;
+    --sidebar-border: 25 25% 25%;
+    --sidebar-ring: 0 65% 45%;
+    
+    /* Custom gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(0 65% 35%) 0%, hsl(15 55% 35%) 50%, hsl(25 45% 25%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(42 85% 55%) 0%, hsl(38 75% 40%) 100%);
+    --gradient-earth: linear-gradient(180deg, hsl(25 35% 30%) 0%, hsl(20 30% 20%) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(20 25% 15% / 0.1);
+    --shadow-elevated: 0 10px 40px -10px hsl(20 25% 15% / 0.15);
+    --shadow-gold: 0 4px 20px -4px hsl(42 85% 55% / 0.3);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --primary: 0 55% 55%;
+    --primary-foreground: 20 25% 10%;
+    
+    --background: 20 20% 8%;
+    --foreground: 35 30% 92%;
+    
+    --card: 20 20% 12%;
+    --card-foreground: 35 30% 92%;
+    
+    --popover: 20 20% 12%;
+    --popover-foreground: 35 30% 92%;
+    
+    --secondary: 20 20% 18%;
+    --secondary-foreground: 35 30% 92%;
+    
+    --muted: 20 15% 20%;
+    --muted-foreground: 35 15% 60%;
+    
+    --accent: 15 50% 45%;
+    --accent-foreground: 35 30% 92%;
+    
+    --gold: 42 75% 50%;
+    --gold-dark: 38 65% 35%;
+    
+    --earth: 25 30% 45%;
+    --earth-light: 25 25% 60%;
+    
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 35 30% 92%;
+    
+    --border: 20 15% 22%;
+    --input: 20 15% 22%;
+    --ring: 0 55% 55%;
+    
+    --sidebar-background: 20 20% 6%;
+    --sidebar-foreground: 35 30% 90%;
+    --sidebar-primary: 0 55% 55%;
+    --sidebar-primary-foreground: 35 30% 92%;
+    --sidebar-accent: 20 20% 15%;
+    --sidebar-accent-foreground: 35 30% 90%;
+    --sidebar-border: 20 15% 18%;
+    --sidebar-ring: 0 55% 55%;
   }
 }
 
@@ -101,5 +134,87 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-gold);
+  }
+  
+  .bg-gradient-hero {
+    background-image: var(--gradient-hero);
+  }
+  
+  .bg-gradient-earth {
+    background-image: var(--gradient-earth);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+  
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+  
+  /* African pattern overlay */
+  .pattern-african {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
