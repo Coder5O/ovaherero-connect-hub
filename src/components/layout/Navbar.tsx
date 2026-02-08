@@ -1,8 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useAuth } from "@/hooks/useAuth";
 
 const navItems = [
   { label: "Home", path: "/" },
@@ -15,6 +16,7 @@ const navItems = [
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { isAdmin } = useAuth();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
@@ -57,6 +59,11 @@ export function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-3">
+            {isAdmin && (
+              <Button variant="outline" size="sm" asChild>
+                <Link to="/admin"><Shield className="w-4 h-4 mr-1" />Admin</Link>
+              </Button>
+            )}
             <Button variant="gold" asChild>
               <Link to="/membership">Join OTA</Link>
             </Button>
