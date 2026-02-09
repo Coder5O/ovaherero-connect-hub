@@ -142,7 +142,33 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      members_directory: {
+        Row: {
+          branch: string | null
+          created_at: string | null
+          first_name: string | null
+          gender: string | null
+          id: string | null
+          last_name: string | null
+        }
+        Insert: {
+          branch?: string | null
+          created_at?: string | null
+          first_name?: string | null
+          gender?: string | null
+          id?: string | null
+          last_name?: string | null
+        }
+        Update: {
+          branch?: string | null
+          created_at?: string | null
+          first_name?: string | null
+          gender?: string | null
+          id?: string | null
+          last_name?: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       has_role: {

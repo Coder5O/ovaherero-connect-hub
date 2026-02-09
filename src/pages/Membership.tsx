@@ -41,7 +41,7 @@ export default function Membership() {
 
   const fetchMembers = async () => {
     setLoadingMembers(true);
-    const { data } = await supabase.from("members").select("*");
+    const { data } = await supabase.from("members_directory").select("*");
     if (data) setMembers(data);
     setLoadingMembers(false);
   };
@@ -294,7 +294,6 @@ export default function Membership() {
                         <TableRow>
                           <TableHead>Name</TableHead>
                           <TableHead>Branch</TableHead>
-                          <TableHead>Age</TableHead>
                           <TableHead>Gender</TableHead>
                         </TableRow>
                       </TableHeader>
@@ -303,13 +302,12 @@ export default function Membership() {
                           <TableRow key={member.id}>
                             <TableCell className="font-medium">{member.first_name} {member.last_name}</TableCell>
                             <TableCell><Badge variant="secondary">{member.branch}</Badge></TableCell>
-                            <TableCell>{member.age}</TableCell>
                             <TableCell>{member.gender}</TableCell>
                           </TableRow>
                         ))}
                         {filteredMembers.length === 0 && (
                           <TableRow>
-                            <TableCell colSpan={4} className="text-center text-muted-foreground py-8">
+                            <TableCell colSpan={3} className="text-center text-muted-foreground py-8">
                               No members found matching your filters.
                             </TableCell>
                           </TableRow>
