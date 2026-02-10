@@ -9,25 +9,7 @@ export function AboutPreview() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Image/Visual */}
           <div className="relative">
-            <div className="aspect-[4/3] rounded-2xl bg-gradient-hero pattern-african overflow-hidden shadow-elevated">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center text-primary-foreground p-8">
-                  <div className="w-24 h-24 mx-auto mb-6 bg-gold/20 rounded-full flex items-center justify-center border-2 border-gold/40">
-                    <span className="font-display text-4xl font-bold text-gold">
-                      OTA
-                    </span>
-                  </div>
-                  <p className="font-display text-2xl font-semibold mb-2">
-                    Chiefs Council
-                  </p>
-                  <p className="text-sm text-primary-foreground/80">
-                    Established 1863
-                  </p>
-                </div>
-              </div>
-            </div>
-            {/* Decorative element */}
-            <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-gold/20 rounded-2xl -z-10" />
+            <div className="aspect-[4/3] rounded-2xl bg-gradient-hero pattern-african overflow-hidden shadow-elevated" />
           </div>
 
           {/* Content */}
