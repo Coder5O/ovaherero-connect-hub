@@ -54,22 +54,8 @@ export function ChaptersGallery() {
           ))}
         </div>
 
-        {/* Google Maps Embed */}
-        <div className="rounded-xl overflow-hidden shadow-soft">
-          <iframe
-            title="OTA Chapter Locations in Namibia"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4877661.697463765!2d15.5!3d-22.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1c7a550ae3a5554d%3A0xe19763efaa8ce7c7!2sNamibia!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
-            width="100%"
-            height="350"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="w-full"
-          />
-        </div>
-        <p className="text-center text-xs text-muted-foreground mt-3">
-          Chapters located in Windhoek, Okahandja, Okakarara, Gobabis, Otjiwarongo, Aminuis, Ovitoto &amp; Otjinene
+        <p className="text-center text-xs text-muted-foreground">
+          Explore all 35 chapters on the interactive map above
         </p>
       </div>
     </section>
